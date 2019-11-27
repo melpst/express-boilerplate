@@ -1,19 +1,19 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-// const mongoose = require('mongoose')
+import express from 'express'
+import bodyParser from 'body-parser'
+import path from 'path'
+
+import { router } from './routes'
+import database from './database'
 import { logger } from './logger'
-const routes = require('./routes')
-// const configDB = require('./credentials/mongolab.js')
-const port = process.env.PORT || 8080
+import { finalConfig } from './config'
 
 const app = express()
-
-// mongoose.Promise = require('bluebird')
-// mongoose.connect(configDB.url)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use('/', routes)
+app.use('/', router)
 
-app.listen(port, () => logger.info(`server is running on port ${port}`))
+app.listen(finalConfig.port, () => {
+    logger.info(`server is running on port ${finalConfig.port} and in ${finalConfig.name} mode`)
+})

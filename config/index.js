@@ -10,4 +10,4 @@ const finalConfig = {
     //sth
 }
 
-export {finalConfig}
+export { finalConfig }
