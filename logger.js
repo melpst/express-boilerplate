@@ -1,4 +1,5 @@
 import log4js from 'log4js'
+import {finalConfig} from '../config'
 const current_datetime = new Date();
 var Log_config = log4js.configure({
   appenders: {
@@ -23,7 +24,7 @@ var Log_config = log4js.configure({
   }
 });
 
-const logger = log4js.getLogger();
+const logger = log4js.getLogger(finalConfig.logger);
 
 export {
   logger,Log_config
