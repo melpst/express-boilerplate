@@ -3,16 +3,14 @@ const current_datetime = new Date();
 var Log_config = log4js.configure({
   appenders: {
     work: {
-      type: "datefile",
-      filename: "./logs/"+ current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()+ " app.log" ,       
-      maxLogSize: 10485760,
-      numBackups: 30
+      type: "dateFile",
+      filename: "./logs/app.log",
+      keepFileExt: true
     },
     test: {
-      type: "datefile",
-      filename: "./logs/test/"+ current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()+ " app.log" ,       
-      maxLogSize: 10485760,
-      numBackups: 30
+      type: "dateFile",
+      filename: "./logs/test/app.log",
+      keepFileExt: true
     },
     console:{
       type: "console"

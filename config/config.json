@@ -1,0 +1,38 @@
+{
+    "production":{
+        "name": "Server Production",
+        "database": {
+            "url": "some url",
+            "dialect": "mongo"
+        },
+        "port": 3000,
+        "logger": "prod"
+    },
+    "development":{
+        "name": "Server Development",
+        "database": {
+            "url": "some url",
+            "dialect": "mongo"
+        },
+        "port": 4000,
+        "logger": ""
+    },
+    "unit":{
+        "name": "Server Unit Test",
+        "database": {
+            "url": "mock url",
+            "dialect": "mock"
+        },
+        "port": 3100,
+        "logger": "test"
+    },
+    "integration":{
+        "name": "Server Integration Test",
+        "database": {
+            "url": "some url",
+            "dialect": "mongo"
+        },
+        "port": 3100,
+        "logger": "test"
+    }
+}
